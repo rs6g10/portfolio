@@ -13,8 +13,8 @@ module.exports = {
 	assets: {
 		lib: {
 			css: [
-				//'public/lib/bootstrap/dist/css/bootstrap.css',
-                //'public/lib/angular-ui/build/angular-ui.css',
+				'public/lib/bootstrap/dist/css/bootstrap.css',
+                'public/lib/angular-ui/build/angular-ui.css',
                 //'public/lib/angular-ui-grid/ui-grid.min.css',
 				//'public/lib/slickgrid/css/smoothness/jquery-ui-1.8.16.custom.css',
 				//'public/lib/slickgrid/slick.grid.css',

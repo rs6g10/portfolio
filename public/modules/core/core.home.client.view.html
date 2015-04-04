@@ -10,28 +10,9 @@
         </div>
     </section>
     <section class="resources section-wrapper" id="resources">
-        <div class="row">
-            <div class="resource-tile-wrapper span-12">
-                <div class="resource-tile google-spec">
-                    <a class="paper-ripple" data-g-event="cta" data-g-label="tile-google-spec" id="google-spec"><span
-                            class=
-                                    "bg">&nbsp;</span> <span
-                            class="title"> -<div id="examples">
-                        <div id="examples-deep"></div>
-                    </div></span></a>
 
-
-                </div>
-            </div>
-            <!--<div class="resource-tile-wrapper span-6">-->
-            <!--<div class="resource-tile design-conference">-->
-            <!--<a class="paper-ripple" data-g-event="cta" data-g-label="tile-design-conference"-->
-            <!--id="design-conference"><span class="bg">&nbsp;</span> <span class="title">Grids</span></a>-->
-            <!--</div>-->
-            <!--</div>-->
-        </div>
         <div class="row">
-            <div class="resource-tile-wrapper span-3">
+            <div class="resource-tile-wrapper span-6">
                 <div class="resource-tile doodle-archive">
                     <a class="paper-ripple" data-g-event="cta" data-g-label="tile-doodle-archive"
                        id="doodle-archive"><span class="bg">&nbsp;</span>
@@ -43,15 +24,24 @@
                     <a class="paper-ripple" data-g-event="cta" data-g-label="tile-google-plus" id="google-plus"
                        rel="publisher"><span class=
                                                      "bg">&nbsp;</span>
-                        <span class="title">Data Structures</span></a>
+                        <span class="title">Data Structures & Algorithms</span></a>
                 </div>
             </div>
-            <div class="resource-tile-wrapper span-3">
-                <div class="resource-tile design-minutes">
-                    <a class="video-link paper-ripple" data-g-event="cta" data-g-label=
-                            "tile-design-minutes" data-lightbox-height="550" data-lightbox-width="660"
-                       id="design-minutes"><span class="bg">&nbsp;</span> <span class=
-                                                                                        "title">Algorithms</span></a>
+            <!--<div class="resource-tile-wrapper span-3">-->
+                <!--<div class="resource-tile design-minutes">-->
+                    <!--<a class="video-link paper-ripple" data-g-event="cta" data-g-label=-->
+                            <!--"tile-design-minutes" data-lightbox-height="550" data-lightbox-width="660"-->
+                       <!--id="design-minutes"><span class="bg">&nbsp;</span> <span class=-->
+                                                                                        <!--"title">Algorithms</span></a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="row">
+            <div class="resource-tile-wrapper span-12">
+                <div class="resource-tile google-spec">
+                    <div id="examples" class="bg">
+                        <div id="examples-deep"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,12 +69,6 @@
                         <span class="title">Research</span></a>
                 </div>
             </div>
-            <!--<div class="resource-tile-wrapper span-3">-->
-            <!--<div class="resource-tile backtotop">-->
-            <!--<a class="gweb-smoothscroll-control" href="#header"><span class="bg">&nbsp;</span>-->
-            <!--<span class="title">Back to top</span></a>-->
-            <!--</div>-->
-            <!--</div>-->
         </div>
     </section>
     <section class="more-design-links">
@@ -328,7 +312,7 @@
     var height = 460,
             imageWidth = 132,
             imageHeight = 152,
-            radius = 75,
+            radius = 110,
             depth = 4;
 
     var currentFocus = [innerWidth / 2, height / 2],
@@ -368,7 +352,7 @@
     var graphic = deep.selectAll("svg,canvas");
 
     var image = new Image;
-    image.src = "ex.jpg?3f2d00ffdba6ced9c50f02ed42f12f6156368bd2";
+    image.src = "images/treemap.png";
     image.onload = resized;
 
     d3.select(window)
@@ -388,11 +372,11 @@
         }
 
         context.clip();
-//        context.drawImage(image,
-//                imageWidth * d.i, imageHeight * d.j,
-//                imageWidth, imageHeight,
-//                -imageWidth / 2, -imageHeight / 2,
-//                imageWidth, imageHeight);
+        context.drawImage(image,
+                imageWidth * d.i, imageHeight * d.j,
+                imageWidth, imageHeight,
+                -imageWidth / 2, -imageHeight / 2,
+                imageWidth, imageHeight);
         context.restore();
     }
 
@@ -433,15 +417,15 @@
                 .attr("xlink:href", function (d) {
                     return d.example.url;
                 })
-                .attr("xlink:title", function (d) {
+                .attr("tooltip", function (d) {
                     return d.example.title;
                 })
                 .append("path")
                 .attr("d", hexbin.hexagon());
 
         anchor.attr("transform", function (d) {
-                    return "translate(" + d + ")";
-                });
+            return "translate(" + d + ")";
+        });
     }
 
     function mousemoved() {

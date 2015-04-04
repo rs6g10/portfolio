@@ -1,0 +1,25 @@
+{
+	"name": "analytics-variables-viz",
+	"version": "0.0.1",
+	"description": "Full-Stack Javascript, Angular, MongoDb",
+	"dependencies": {
+        "jquery": "~2.1.3",
+        "jquery-ui": "~1.11.2",
+        "jquery.event.drag-new": "latest",
+        "slickgrid": "latest",
+        "bootstrap": "~3",
+		"angular": "~1.2",
+		"angular-resource": "~1.2", 
+		"angular-mocks": "~1.2", 
+		"angular-cookies": "~1.2",  
+		"angular-animate": "~1.2", 
+		"angular-material": "latest",
+		"angular-ui-grid": "latest",
+		"angular-virtual-scroll": "latest",
+		"angular-touch": "~1.2",
+		"angular-sanitize": "~1.2", 
+		"angular-bootstrap": "~0.10.0",
+		"angular-ui-utils": "~0.1.1",
+		"angular-ui-router": "~0.2.10" 
+	}
+}

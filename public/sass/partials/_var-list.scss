@@ -1,0 +1,233 @@
+// ================  suggestion list customisation  =======================
+.viewport {
+    width: 80%;
+    margin: 30px auto 60px auto;
+    border-top: 1px solid $grey !important;
+    height: 600px;
+    #suggestions {
+        .suggestions-list {
+            font-size: 14px;
+            padding: 10px;
+            height: 115px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            position: relative;
+            color: $font-color;
+            cursor: auto;
+            border-bottom: 1px solid $grey !important;
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            border: 1px solid transparent;
+            &:hover, &:active, &.active {
+                box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.4)!important;
+                background-color: $darker-background;
+            }
+            &:focus {
+                outline: none;
+            }
+            h1 {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-family: $font-black;
+            }
+            span {
+                float: left;
+                padding-top: 5px;
+            }
+            p {
+                float: right;
+                margin-top: -23px;
+            }
+            pre {
+                width: 50%;
+                float: right;
+                height: 50px;
+                margin-top: -15px;
+                padding: 5px;
+            }
+            #tagsList {
+                margin-top: 47px;
+                clear: both;
+            }
+            #buttons {
+                margin: 24px 0 0 0;
+                .md-button {
+                    border-radius: 50%;
+                }
+                .open,
+                .show {
+                    float: right;
+                    text-indent: -9999px;
+                    width: 25px;
+                    height: 25px;
+                    transition: all 0.3s ease-in-out;
+                    margin: 0 0px 0px 7px;
+                }
+                .open {
+                    background: url('../../modules/core/img/brand/icons/close.svg')no-repeat;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    &:hover {
+                        background: url('../../modules/core/img/brand/icons/close.svg')no-repeat!important;
+                        -webkit-transform: rotate(135deg);
+                        transform: rotate(135deg);
+                    }
+                }
+                .show {
+                    background: url('../../modules/core/img/brand/icons/show.svg')no-repeat;
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                    &:hover, &:focus, &:active {
+                        background: url('../../modules/core/img/brand/icons/show.svg')no-repeat!important;
+                        -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+#grainList {
+    padding: 0;
+    margin: 0;
+    li.tagClass {
+        border-bottom: 2px solid $pink;
+        float: left;
+    }
+}
+
+#Flilterlists {
+    float: left;
+    width: 25%;
+    margin: 175px 0 0 0;
+    ul {
+        margin-bottom: 30px;
+    }
+    h2 {
+        font-family: $font-bold;
+        text-transform: uppercase;
+        border-bottom: 1px solid black;
+        padding: 0 0 5px 0;
+        margin-bottom: 10px;
+    }
+    #DimensionsList {
+        h2 {
+            color: $pink;
+            border-bottom-color: $pink;
+        }
+        .DimlistItem {
+            position: relative;
+            .DimensionsCount {
+                position: absolute;
+                left: 8px;
+                top: 8px;
+                font-family: $font-light;
+                color: $pink;
+            }
+            md-checkbox {
+                margin: 10px 0;
+                padding: 8px 5px 8px 20px;
+                position: relative;
+                -webkit-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+                .md-container {
+                    display: none;
+                }
+                .md-label {
+                    outline: 0 !important;
+                    border: none !important;
+                    margin-left: 19px;
+                    width: 100%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: block;
+                }
+                &:hover,
+                &.md-checked {
+                    background: $pink-transparent;
+                }
+                &.md-checked {
+                    .md-label {
+                        width: 75%;
+                    }
+                }
+                &:active {
+                    background: $pink;
+                }
+                &.md-checked:after {
+                    content: "";
+                    position: absolute;
+                    right: 8px;
+                    top: 7px;
+                    width: 18px;
+                    height: 10px;
+                    border-bottom: 1px solid white;
+                    border-left: 1px solid white;
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -o-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+    #TagsList {
+        h2 {
+            color: $blue;
+            border-bottom-color: $blue;
+        }
+        .md-button {
+            &:hover {
+                background: $blue !important;
+            }
+        }
+    }
+}
+
+.animate-hide {
+    -webkit-transition: all linear 0.3s;
+    transition: all linear 0.3s;
+    opacity: 1;
+    border-top: 1px solid $grey;
+    margin: 70px 0 0 0;
+    h3 {
+        font-size: 16px;
+        font-family: $font-light;
+        color: $font-color;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+    }
+    li {
+        border: none!important;
+        padding-top: 20px;
+        cursor: auto;
+        &:hover, &:active, &.active {
+            box-shadow: none!important;
+            border: none!important;
+        }
+        .author {
+            float: left;
+            text-transform: capitalize;
+        }
+        .date {
+            float: right;
+            clear: left;
+        }
+    }
+}
+
+.animate-hide.ng-hide {
+    line-height: 0;
+    opacity: 0;
+    padding: 0 10px;
+}

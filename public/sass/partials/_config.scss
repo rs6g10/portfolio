@@ -1,0 +1,73 @@
+/*=========================== colours ====================================== */
+
+$background: #26405b;
+$font-color: #313335;
+$grey: #afafaf;
+$light-background: #ececec;
+$darker-background: #e5e5e5;
+$border-header:#66788B;
+$button-font: #26405B;
+$bright-green:#38ffba;
+$teinted-green:#29f0ab;
+$darkened-green:#1cdb99;
+$bright-blue:#3ea6ff;
+$teinted-blue:#2b84d1;
+$pink-red:#f27;
+$teal: #5feeca;
+$dark-teal: #2dba97;
+$off-yellow: #d9e542;
+$orange: rgb(237,137,63);
+$orange-trans: rgba(237,137,63,0.2);
+$pink: #ee5f83;
+$purple: #ee5fee;
+$blue: #5fa6ee;
+$dark-blue: #26405b;
+$pink-transparent:rgba(236, 97, 132, 0.3);
+
+//@mixin transition($object $timing $effect) {
+//  -webkit-transition: $object $timing $effect;
+//     -moz-transition: $object $timing $effect;
+//      -ms-transition: $object $timing $effect;
+//          transition: $object $timing $effect;
+//}
+
+$font-light: 'din_otlight',
+helvetica,
+arial,
+sans-serif;
+$font-black: 'din_otblack',
+helvetica,
+arial,
+sans-serif;
+$font-bold: 'din_otbold',
+helvetica,
+arial,
+sans-serif;
+/*=========================== Scrollbar  styling ========================*/
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: $light-background;
+    //    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid $darker-background;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dfdfdf;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover, &:focus, &:active {
+        background: $orange;
+    }
+}
+/*======================================================================*/
+
+// Change the white to any color ;)
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px $light-background inset !important;
+}

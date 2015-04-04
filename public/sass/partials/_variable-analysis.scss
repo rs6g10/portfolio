@@ -1,0 +1,346 @@
+@import '../../lib/angular-material/angular-material.css';
+.variable-analysis {
+  textarea.csv {
+    width: 100%;
+    height: calc(100vh - 150px);
+    border: 1px solid #999999;
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+  textarea.levelOne {
+    height: calc(100vh - 200px);
+  }
+  textarea.levelTwo {
+    height: 100px;
+  }
+  header {
+    height: 35px;
+  }
+  md-input-container.url {
+    input.url {
+      &:hover, &:focus, &:active {
+        border-color: $teinted-green;
+        color: $button-font;
+        outline: 0;
+      }
+    }
+  }
+  .tab-pane {
+    overflow: visible;
+  }
+  .btn.export,
+  .btn.build {
+    border: 1px solid $teinted-green;
+    color: $button-font;
+    &:hover, &:focus {
+      background: $bright-green;
+      border: 1px solid $bright-green;
+    }
+  }
+  .btn.export {
+    float: right;
+    margin: 15px 0px 0px 0;
+  }
+  .btn.build {
+    float: right;
+    margin: 10px 20px 0 0px;
+  }
+  .btn.menu {
+    &:hover, &:focus {
+      border-bottom: 2px solid $bright-green;
+    }
+    &.active {
+      border-bottom: 2px solid $bright-green;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+  .nav-tabs{
+    margin-left: 0;
+  }
+  .nav-tabs>li.active>a {
+    border-bottom: 2px solid $teinted-green;
+    color: $button-font;
+  }
+  .nav-tabs>li.active>a:hover,
+  .nav-tabs>li.active>a:focus,
+  .nav-tabs>li>a:hover,
+  .nav-tabs>li>a:focus {
+    border-bottom: 2px solid $teinted-green;
+    color: $button-font;
+  }
+  .nav-tabs>li:hover,
+  .nav-tabs>li:focus {
+    color: $teinted-green;
+  }
+  .tabset {
+    clear: both;
+    margin: 2px;
+    &.main {
+      margin-top: 15px;
+    }
+  }
+  .grid-diagnostics {
+    &.ui-grid {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+  }
+  .grid-independentVariables {
+    height: calc(100vh - 450px);
+  }
+  .grid-config {
+    height: 100px;
+    height: calc(100vh - 160px);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .grid {
+    margin-top: 20px;
+    clear: both;
+    border: 1px solid #d4d4d4;
+    .ui-grid-render-container {
+      height: 100%;
+    }
+    .ui-grid-coluiGrid-006 {
+      div.btn-group {
+        width: 102%;
+        label {
+          width: 33%;
+
+          &.active{
+            background: $bright-green;
+            color: $font-color;
+          }
+        }
+      }
+    }
+    label.checkbox-label {
+      width: 100%;
+    }
+    label.radio-label {
+      width: 35px;
+      vertical-align: -webkit-baseline-middle;
+    }
+    label {
+      cursor: pointer;
+      //      float: left;
+    }
+    span.radio-label {
+      //      display: inline-block;
+      float: left;
+      margin-top: -14px;
+      margin-left: 23px;
+    }
+  }
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  /* ================= Slick grid-customisation ========================= */
+
+  .slickgrid {
+    width: 100%;
+    height: 1000px;
+    font: 15px 'DINOT', sans-serif;
+    font-weight: 100;
+    color: #40464d;
+  }
+  .slick-cell {
+    height: 30px !important;
+  }
+  .slick-row {
+    height: 30px !important;
+    line-height: 25px;
+  }
+  .slick-header-columns,
+  .slick-headerrow-columns {
+    height: 30px;
+  }
+  .slick-header-column.ui-state-default {
+    cursor: pointer;
+    height: 30px;
+    color: white;
+    //        text-transform: capitalize;
+    border-color: #6082a0;
+    line-height: 25px;
+    background: #7497b5;
+    padding-left: 10px;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    &:hover {
+      border-bottom: 3px solid $bright-green;
+    }
+  }
+  .percent-complete-bar {
+    display: inline-block;
+    height: 30px;
+    position: absolute;
+    top: -2px;
+    line-height: 32px;
+    text-indent: -30px;
+    border-left: 1px dotted rgb(173, 173, 173);
+  }
+  .positive {
+    background: $bright-green;
+  }
+  .negative {
+    background: $pink-red;
+    transform: scaleX(-1);
+  }
+  .value-percent {
+    float: right;
+    text-align: right;
+    width: 50px;
+    border-left: 1px dashed #cbcbcb;
+  }
+  .slick-column-name {
+    text-align: right;
+    padding-left: 30px;
+  }
+  .slick-sort-indicator-asc {
+    background: url(../../imgs/icons/sort-asc.svg)no-repeat;
+  }
+  .slick-sort-indicator-desc {
+    background: url(../../imgs/icons/sort-desc.svg)no-repeat;
+  }
+  .slick-sort-indicator {
+    margin-top: -14px;
+    padding-right: 10px;
+  }
+  .slick-group {
+    background: #e7eef4!important;
+    position: relative;
+    margin-top: -30px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .slick-group-title {
+    position: absolute;
+    left: 30px;
+    & span {
+      color: $darkened-green;
+    }
+  }
+  .slick-group-toggle {
+    cursor: pointer;
+    width: 100%;
+    height: 29px;
+    position: relative;
+    z-index: 2;
+    &.collapsed {
+      background: url(../../imgs/icons/expand.svg)no-repeat 5px 7px;
+      background-size: 9px 9px;
+    }
+    &.expanded {
+      background: url(../../imgs/icons/collapse.svg)no-repeat 5px 8px;
+      background-size: 9px 9px;
+    }
+  }
+  .ui-grid-cell-contents {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .filter-box {
+    //        margin: 10px 0;
+    input[type=text] {
+      width: 180px;
+      font-weight: 100;
+      transition: all 0.3s ease-in-out;
+      &:focus, &:hover, &:active {
+        width: 300px;
+        border-color: $teinted-green;
+        color: $button-font;
+      }
+    }
+  }
+  .tooltip {
+    position: absolute;
+    color: white;
+    background-color: #9ebde2;
+    text-align: center;
+    border: 1px solid $bright-blue;
+  }
+  //    =================== angular material customisation =====================
+  .md-button.md-default-theme {
+    border-radius: 0px;
+    text-transform: capitalize;
+    padding: 0 20px;
+    &:hover, &:focus, &:active {
+      outline: none;
+    }
+  }
+  md-input-container {
+    padding-bottom: 15px;
+    margin: 0;
+    float: left;
+    &.url {
+        float: right;
+      height: 47px;
+      padding: 0;
+      width: 60%;
+      overflow-y: hidden;
+      line-height: 0;
+    }
+  }
+  md-checkbox.md-default-theme.md-checked .md-icon {
+    background-color: $bright-blue;
+  }
+  md-checkbox {
+    float: left;
+  }
+  md-switch {
+    display: inline-block;
+    float: right;
+    margin: 22px 20px 0 0;
+    .md-label {
+      display: inline-block;
+      margin: -20px 0 0 0px;
+      text-indent: 50px;
+      width: 150px;
+    }
+    .md-container {
+      height: 2px;
+    }
+  }
+  md-switch.md-default-theme.md-checked {
+    .md-thumb {
+      background-color: $bright-green;
+    }
+    .md-bar {
+      background-color: $bright-green;
+      opacity: 0.5;
+    }
+  }
+  a {
+    &:hover, &:focus, &:active {
+      outline: none;
+    }
+  }
+}

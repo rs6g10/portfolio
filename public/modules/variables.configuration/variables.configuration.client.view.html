@@ -1,0 +1,43 @@
+<section class="content variable-analysis" data-ng-controller="Variables.ConfigurationController">
+    <div class="variable-analysis" ng-if="authentication.user">
+        <md-button class="btn btn-default btn-sm build">Build Impact
+            SpreadSheet
+        </md-button>
+        <tabset class="tabset">
+            <tab heading="Variable config">
+                <header>
+                    <md-checkbox type="checkbox">
+                        <label>Select all included</label>
+                    </md-checkbox>
+                </header>
+                <div id="configGrid"
+                     ui-grid="gridOptions"
+                     class="grid grid-config"
+                     ></div>
+            </tab>
+            <tab heading="Variable config CSV">
+                <textarea class="outer csv" spellcheck="false"></textarea>
+            </tab>
+            <tab heading="Tables">
+                <div id="tableGrid"
+                     ui-grid="vm.output.tableGridOptions"
+                     class="grid grid-config"
+                     ui-grid-resize-columns>
+
+                </div>
+            </tab>
+            <tab heading="Columns">
+                <div id="colGrid"
+                     ui-grid-edit
+                     ui-grid="vm.output.columnDefsGridOptions"
+                     class="grid grid-config"
+                     ui-grid-resize-columns></div>
+            </tab>
+            <tab heading="Columns CSV">
+                    <textarea
+                            class="outer csv"
+                            spellcheck="false"></textarea>
+            </tab>
+        </tabset>
+    </div>
+</section>

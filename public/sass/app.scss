@@ -1,0 +1,793 @@
+@import 'partials/_font';
+@import 'partials/_config';
+@import 'partials/_reset';
+//import other style pages
+@import 'partials/_form-pages';
+@import 'partials/_detail-page';
+@import 'partials/_var-list';
+@import 'partials/_nav-bar';
+@import 'partials/_input-search';
+@import 'partials/_variable-analysis';
+
+/*=========================== Global styling ========================*/
+
+body {
+  font: 14px 'DINOT', sans-serif;
+  font-weight: 100;
+  background: #ECECEC;
+  color: #1b2733;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0px 5px 5px 5px;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  padding-left: 5px;
+}
+
+button:hover,
+button:focus,
+button:active {
+  color: $font-color;
+  outline: none;
+}
+
+label input[type=checkbox],
+label input[type=radio] {
+  cursor: pointer;
+}
+
+textarea.csv {
+  border: 1px solid #999999;
+}
+
+/*=========================== Scrollbar  styling ========================*/
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+  transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:focus,
+::-webkit-scrollbar-thumb:active {
+  background: #5fa6ee;
+}
+
+/*=========================== top nav ========================*/
+
+img {
+  float: left;
+}
+
+.topnav {
+  background: #26405b;
+  width: 100%;
+  height: 44px;
+  border-radius: none;
+  border-bottom: 1px solid #26405b;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 100;
+}
+
+.topnav .graph,
+.topnav .var {
+  display: inline-block;
+  float: left;
+  border-right: 1px solid rgba(255, 255, 255, .3);
+  box-sizing: border-box;
+  height: 44px;
+  padding: 0 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.topnav .graph {
+  width: 141px;
+}
+
+.topnav .graph:hover {
+  border-bottom: 2px solid #68b4ff !important;
+  background: rgba(95, 166, 238, 0.15) !important;
+}
+
+.topnav .graph.current {
+  border-bottom: 2px solid #68b4ff;
+}
+
+.topnav .var {
+  width: 114px;
+}
+
+.topnav .var:hover {
+  border-bottom: 2px solid #52EFB2 !important;
+  background: rgba(82, 239, 178, 0.15) !important;
+}
+
+.topnav .var.current {
+  border-bottom: 2px solid #52EFB2 !important;
+}
+
+.topnav .btn.dropdown-toggle,
+.topnav .menu {
+  height: 44px;
+  color: white;
+  font-weight: 100;
+  border-right: 1px solid rgba(255, 255, 255, .3);
+  padding: 6px 12px;
+}
+
+.btn,
+.btn.dropdown-toggle {
+  background: none;
+  border-radius: 0px;
+  border: 1px solid rgba(38, 64, 91, .3);
+  height: 35px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  padding: 6px 29px 12px 12px;
+  //    color: #f9f9f9;
+}
+
+.btn {
+  padding: 6px 12px;
+}
+
+.btn:hover {
+  background: $bright-green;
+}
+
+.btn-group.open .caret {
+  -webkit-transform: rotate(-224deg);
+  transform: rotate(-224deg);
+  top: 16px;
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.topnav {
+  &.open {
+    .caret {
+      top: 21px;
+    }
+  }
+  .caret {
+    border-color: rgba(255, 255, 255, .5);
+    top: 16px;
+  }
+}
+
+.caret {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 9px;
+  height: 9px;
+  border-left: 1px solid rgba(38, 64, 91, .5);
+  border-bottom: 1px solid rgba(38, 64, 91, .5);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-top: none;
+  border-right: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-default,
+.btn-primary {
+    color: $font-color;
+}
+
+.btn-default:hover,
+.btn-primary:hover {
+     color: $font-color;
+}
+.btn-default.active,
+.btn-primary.active,.btn-default:active,
+.btn-primary:active,.btn-default:focus,
+.btn-primary:focus {
+    background: $darkened-green;
+    box-shadow: none;
+    outline: 0;
+    color: $font-color;
+}
+
+.checkbox {
+  span {
+    margin-left: 10px;
+  }
+}
+
+label.checkbox,
+label.ng-binding,
+input {
+  color: #1b2733;
+}
+
+.topnav .dropdown-menu {
+  left: 254px;
+  top: 99%;
+}
+
+.dropdown-menu {
+  max-height: 355px;
+  overflow-y: scroll;
+  max-width: 200px !important;
+  border-radius: 0px !important;
+  left: 15px;
+    overflow-y: hidden;
+}
+
+.dropdown-menu.dropdown-selector li {
+  padding: 5px 0;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #1b2733;
+  shape-rendering: crispEdges;
+}
+
+.foreground.bar,
+.bar {
+  fill: $bright-green;
+}
+
+.foreground.bar:hover,
+.bar:hover {
+  fill: $pink-red;
+}
+
+.axis text {
+  fill: #1b2733;
+  opacity: 0.5;
+  font: 10px "din_otlight", sans-serif;
+  stroke: none;
+}
+
+.chart {
+  width: 100%;
+  height: 400px;
+  padding: 0;
+}
+
+label,
+.menu-checklist {
+  margin: 0 0 0 10px;
+  font-weight: normal;
+}
+
+.ui-grid {
+  height: calc(100% - 350px);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ui-grid-canvas {
+  height: 100%;
+}
+
+.ui-grid-render-container-body {
+  float: none;
+
+  .ui-grid-viewport {
+    width: auto !important;
+  }
+} 
+.ui-grid-cell .btn-group{
+     width: 100%;
+    label{
+         width:33.5%;
+        &.btn-primary.active{
+             background: $darkened-green; 
+            color: $font-color;
+        }
+        &.btn-primary:hover, &.btn-primary:focus{
+            color: $font-color;
+        }
+    }
+}
+/* ========================== container =====================*/
+
+.container-fluid {
+     margin-top: 44px;
+    padding: 0;
+}
+.content.variable-analysis {
+     margin-top: 0px;
+    padding: 0;
+}
+/*=========================== filters nav ========================*/
+
+#filteroptions {
+  background: #ededed;
+  height: 100%;
+  width: 253px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-right: 1px solid rgba(38, 64, 91, .3);
+
+  button {
+    margin: 5px;
+  }
+  .addData {
+    width: 100%;
+    margin-top: 44px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    button {
+      width: 222px;
+      color: white;
+      background: $bright-green;
+      height: 44px;
+      font-size: 20px;
+      margin: 10px 15px;
+      &:hover, &:focus {
+        background: none;
+        color: $bright-green;
+        border-color: $bright-green;
+      }
+      .caret {
+        right: 19px;
+        top: 15px;
+      }
+    }
+    &.open {
+      button {
+        background: #286090;
+        color: white;
+      }
+      .dropdown-menu {
+        max-width: 222px !important;
+        top: 28%;
+      }
+      .caret {
+        top: 19px;
+      }
+    }
+    form {
+      clear: both;
+      display: block;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-bottom: 1px solid rgba(38, 64, 91, 0.3);
+      border-top: 1px solid rgba(38, 64, 91, 0.1);
+      .fileUpload {
+        float: right;
+        position: relative;
+        margin: 0px 15px 0 0px;
+        width: 32%;
+        height: 35px;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+      #uploadFile {
+        height: 35px;
+        padding: 0 10px;
+        position: absolute;
+        left: 15px;
+        width: 52%;
+      }
+      .upload {
+        clear: both;
+      }
+    }
+  }
+}
+
+.btn-group.open .caret {
+  top: 16px;
+}
+
+#createViz,
+#createSuiteViz,
+#filtercontainer {
+  width: 100%;
+  overflow: visible;
+  padding: 15px 10px 20px 10px;
+  border-bottom: 1px solid rgba(38, 64, 91, .3);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  #axis-variables {
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(38, 64, 91, .1);
+    button {
+      width: 104px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      .axisLetter {
+        float: left;
+        font-weight: bold;
+        color: $bright-green;
+      }
+    }
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  button {
+    width: 222px;
+    text-align: center;
+    &:hover, :focus {
+      .axisLetter {
+        color: white;
+      }
+    }
+  }
+  ul.dropdown-menu {
+    left: 4px;
+    top: 82%;
+    max-width: 222px !important;
+    width: 222px;
+  }
+  #chart-type {
+    display: inline-block;
+    button {
+      width: 65px;
+      padding: 65px 0px 10px 0px;
+      background-position: 0 0px !important;
+      line-height: 0px;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1) inset;
+      &:hover, &:focus {
+        color: white;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1) inset;
+        outline: none;
+        &#Barchart {
+          background: $bright-green url(../imgs/chart-icons/white-_bar-chart.svg) no-repeat;
+        }
+        &#Scatterplot {
+          background: $bright-green url(../imgs/chart-icons/white-_scatterplot.svg) no-repeat;
+        }
+        &#Boxplot {
+          background: $bright-green url(../imgs/chart-icons/white-_box-plot.svg) no-repeat;
+        }
+      }
+      &#Barchart {
+        background: transparent url(../imgs/chart-icons/bar%20chart.svg) no-repeat;
+      }
+      &#Scatterplot {
+        background: transparent url(../imgs/chart-icons/scatterplot.svg) no-repeat;
+      }
+      &#Boxplot {
+        background: transparent url(../imgs/chart-icons/box%20plot.svg) no-repeat;
+      }
+    }
+  }
+}
+
+#createSuiteViz {
+  .btn-group {
+    width: 62%;
+    button {
+      width: 136px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    ul {
+      height: 300px;
+    }
+  }
+  .plot {
+    width: 73px;
+    color: white;
+    background: $bright-green;
+    height: 35px;
+    font-size: 20px;
+    line-height: 1;
+    &:hover, &:focus {
+      background: none;
+      color: $bright-green;
+      border-color: $bright-green;
+    }
+  }
+}
+
+#createViz,
+#filtercontainer {
+  box-shadow: none;
+}
+
+#filtercontainer {
+  border: none;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.animate-hide {
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  line-height: 20px;
+  opacity: 1;
+}
+
+.animate-hide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}
+
+#filtercontainer {
+  clear: both;
+}
+
+input#filterscript {
+  background: none;
+  border-bottom: 1px solid rgba(38, 64, 91, .3) !important;
+  color: #1b2733;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px;
+  margin-top: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+input#filterscript:focus {
+  outline: none;
+  background: rgba(255, 255, 255, .1);
+}
+
+input#filterscript,
+#filtercontainer select {
+  width: 100%;
+  display: block;
+  margin: 0 0 10px 0;
+}
+
+input#filterscript::after {
+  content: "type your own filters here:";
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+}
+
+/*=========================== data viz ========================*/
+
+#outputViz {
+  float: right;
+  width: calc(100% - 253px);
+  #crossfilter-container {
+    height: 270px;
+    padding: 10px;
+    .dropdown-toggle {
+      width: 160px;
+    }
+    .dropdown-menu {
+      left: 0px;
+      top: 95%;
+    }
+    .btn-group {
+      position: absolute;
+      right: 10px;
+      top: 100px;
+    }
+    #crossfilterArupProjPeriodVars {
+      margin-top: 25px;
+    }
+  }
+  #crossfilter-container .crossfilter-charts {
+    width: 100%;
+    padding: 15px 10px 5px 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .crossfilter-charts {
+    margin-bottom: 10px;
+  }
+  .results-cross {
+    margin: 10px 0;
+  }
+  .crossfilter {
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+  }
+  .crossfilter div {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    clear: both;
+  }
+  .nav-tabs {
+    margin: 0;
+  }
+  .tabset {
+    .tab-content {
+      padding: 10px;
+    }
+  }
+}
+
+.tabset {
+  margin-bottom: 20px;
+  &.main {
+    margin: 25px 0 0 0;
+  }
+}
+
+.tab-content {
+  background: #f9f9f9;
+}
+
+.tab-pane {
+  height: 100%;
+  overflow: auto;
+}
+
+.nav-tabs {
+  height: 35px;
+  margin-left: 253px;
+}
+
+.nav-tabs > li {
+  line-height: 35px;
+  margin: 5px 10px 0 0px;
+  cursor: pointer;
+}
+
+.nav-tabs > li > a {
+  font-size: 14px;
+  color: #b2b2b2;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  height: 25px;
+  padding: 5px 10px 23px 10px;
+}
+
+.nav-tabs > li.active > a {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid $bright-green;
+  color: $bright-green;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+}
+
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  border: none;
+  background: none;
+  border-bottom: 2px solid $bright-green;
+  color: $bright-green;
+}
+
+.nav-tabs > li:hover,
+.nav-tabs > li:focus {
+  color: $bright-green;
+}
+
+tabset.tabset {
+  float: right;
+  margin: 10px 0 0 0;
+  font-weight: normal;
+}
+
+ul.no-style li {
+  margin: 0;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+.d3-tip span {
+  color: deeppink;
+}
+
+ul.dropdown-menu-form {
+  padding: 5px 10px 0;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+ul.no-style {
+  list-style: none;
+}
+
+/* Creates a small triangle extender for the tooltip */
+
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+.step-plot,
+#step-plot {
+  width: 100%;
+  height: 200px;
+}
+
+/* Style northward tooltips differently */
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+/* =============== Angular-material design ========================*/
+
+.buttondemoBasicUsage {
+  /** From vulcanized demo **/
+}
+
+.buttondemoBasicUsage section {
+  background: #f7f7f7;
+  border-radius: 3px;
+  text-align: center;
+  margin: 1em;
+  position: relative !important;
+  padding-bottom: 10px;
+}
+
+.buttondemoBasicUsage md-content {
+  margin-right: 7px;
+}
+
+.buttondemoBasicUsage section .md-button:not(.md-fab) {
+  min-width: 10em;
+}
+
+.buttondemoBasicUsage section .md-button {
+  display: block;
+  margin: 1em;
+  line-height: 25px;
+}
+
+.buttondemoBasicUsage .label {
+  position: absolute;
+  bottom: 5px;
+  left: 7px;
+  color: #ccc;
+  font-size: 14px;
+}

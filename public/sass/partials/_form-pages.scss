@@ -1,0 +1,67 @@
+.form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+section h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: $font-black;
+    text-align: left;
+    color: $grey;
+}
+
+fieldset {
+    width: 80%;
+    margin: 70px auto;
+    md-input-container.form-group {
+        width: 100%;
+        label {
+            font-size: 24px;
+            line-height: 10px;
+            padding-top: 0px;
+            
+            &:before {
+                content: "";
+                display: none;
+            }
+        }
+        .form-control {
+            font-family: $font-bold;
+            height: 61px;
+            text-transform: none;
+            font-size: 40px;
+        }
+        input[type="text"] {
+            -webkit-appearance: none;
+            &:hover, &:focus, &:active {
+                outline: 0px!important;
+            }
+        }
+    }
+}
+
+md-input-container.form-group.md-default-theme:not(.md-input-invalid).md-input-has-value label {
+    &:before {
+        content: "";
+        display: none;
+    }
+}
+
+md-input-container.form-group.md-default-theme:not(.md-input-invalid).md-input-focused input,
+md-input-container.form-group.md-default-theme:not(.md-input-invalid).md-input-has-value input {
+    height: 60px;
+}
+
+md-input-container label, md-input-container .md-placeholder {
+        -webkit-transform: translate3d(0, 15px, 0) scale(1.24);
+        transform: translate3d(0, 15px, 0) scale(1.24);
+    }
+md-input-container.md-input-focused label, md-input-container.md-input-has-value label {
+-webkit-transform: translate3d(0, 4px, 0) scale(0.75);
+transform: translate3d(0, 4px, 0) scale(0.75);
+}
+
+.forgot-password{
+    text-align: center;   
+}

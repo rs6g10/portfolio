@@ -1,0 +1,144 @@
+// ================  input search customisation  =======================
+.tags-wrapper {
+    width: 52%;
+    margin: 50px auto 0 auto;
+    md-input-container {
+        display: block;
+        width: 81%;
+        margin: 0 auto;
+        background: $light-background;
+        overflow-x: visible;
+        
+        &:hover label {
+            color: $bright-green;
+        }
+        span {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: $grey;
+            font-family: $font-black;
+        }
+        label {
+            font-size: 24px;
+            line-height: 20px;
+            padding-top: 22px;
+            font-style: italic;
+            color: $grey;
+            display: block;
+            &:before {
+                content: "Start typing...";
+            }
+        }
+        input[type="text"] {
+            -webkit-appearance: none;
+            &:hover, &:focus, &:active {
+                outline: 0px!important;
+            }
+        }
+        .form-control {
+            width: 100%;
+            font-family: $font-black;
+            height: 61px;
+            text-transform: uppercase;
+            padding: 0px;
+            font-size: 55px;
+            color: $font-color;
+            background: none;
+            border-radius: 0px;
+            border: none;
+            border-bottom: 1px solid $grey !important;
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            outline: none!important;
+            -webkit-appearance: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            &:hover, &:focus, &:active {
+                outline: none!important;
+            }
+        }
+    }
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label {
+    color: $grey;
+    &:before {
+        content: "Keep typing...";
+    }
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label {
+    color: $orange;
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused input,
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value input {
+    height: 71px;
+}
+
+.tags-wrapper {
+    md-input-container label, md-input-container .md-placeholder {
+        -webkit-transform: translate3d(0, 42px, 0) scale(1.24);
+        transform: translate3d(0, 42px, 0) scale(1.24);
+    }
+    md-input-container.md-input-focused label,
+    md-input-container.md-input-has-value label {
+        -webkit-transform: translate3d(0, 4px, 0) scale(0.75);
+        transform: translate3d(0, 4px, 0) scale(0.75);
+    }
+}
+
+// ================  tags List customisation  =======================
+.top-buffer {
+    padding-top: 20px;
+}
+
+.tags-cloud {
+    .tag {
+        float: left;
+        padding: 0px 6px;
+        padding-right:0!important;
+        line-height: 20px;
+        height: 30px;
+        margin: 5px 7px 10px 0;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border-bottom: 2px solid $pink;
+        -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        span.tagName {
+            font-size: 13px;
+            font-family: $font-light;
+            border-radius: none;
+            color: $font-color;
+            text-transform: lowercase;
+            padding:0;
+        }
+        .cross {
+            background: url("../../modules/core/img/brand/icons/cross-dark.svg") no-repeat;
+            width: 0px;
+            height: 0px;
+            line-height: 7px;
+            margin-left: 0px;
+            text-indent: -9999px;
+            opacity: 0;
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+        &:hover {
+            background: $pink-transparent!important;
+            color: white!important;
+        }
+        &:hover .cross {
+            opacity: 1;
+            width: 16px;
+            height: 11px;
+            margin-left:5px;
+        }
+    }
+}

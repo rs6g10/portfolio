@@ -15,26 +15,18 @@
             <div class="resource-tile-wrapper span-6">
                 <div class="resource-tile doodle-archive">
                     <a class="paper-ripple" data-g-event="cta" data-g-label="tile-doodle-archive"
-                       id="doodle-archive"><span class="bg">&nbsp;</span>
+                       id="doodle-archive" href="#!/games"><span class="bg">&nbsp;</span>
                         <span class="title">Games</span></a>
                 </div>
             </div>
             <div class="resource-tile-wrapper span-6">
                 <div class="resource-tile google-plus">
                     <a class="paper-ripple" data-g-event="cta" data-g-label="tile-google-plus" id="google-plus"
-                       rel="publisher"><span class=
+                       rel="publisher" href="#!/dsa"><span class=
                                                      "bg">&nbsp;</span>
                         <span class="title">Data Structures & Algorithms</span></a>
                 </div>
             </div>
-            <!--<div class="resource-tile-wrapper span-3">-->
-                <!--<div class="resource-tile design-minutes">-->
-                    <!--<a class="video-link paper-ripple" data-g-event="cta" data-g-label=-->
-                            <!--"tile-design-minutes" data-lightbox-height="550" data-lightbox-width="660"-->
-                       <!--id="design-minutes"><span class="bg">&nbsp;</span> <span class=-->
-                                                                                        <!--"title">Algorithms</span></a>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
         <div class="row">
             <div class="resource-tile-wrapper span-12">
@@ -48,7 +40,7 @@
         <div class="row">
             <div class="resource-tile-wrapper span-3">
                 <div class="resource-tile google-cast">
-                    <a class="paper-ripple" data-g-event="cta" data-g-label="tile-google-cast" id="google-cast"><span
+                    <a class="paper-ripple" data-g-event="cta" data-g-label="tile-google-cast" id="google-cast" href="#!/node"><span
                             class=
                                     "bg">&nbsp;</span>
                         <span class="title">Node.js</span></a>
@@ -56,7 +48,7 @@
             </div>
             <div class="resource-tile-wrapper span-3">
                 <div class="resource-tile glass-design">
-                    <a class="paper-ripple" data-g-event="cta" data-g-label="tile-glass-design" id="glass-design"><span
+                    <a class="paper-ripple" data-g-event="cta" data-g-label="tile-glass-design" href="#!/angular" id="glass-design"><span
                             class=
                                     "bg">&nbsp;</span>
                         <span class="title">Angular</span></a>
@@ -64,7 +56,7 @@
             </div>
             <div class="resource-tile-wrapper span-6">
                 <div class="resource-tile web-designer">
-                    <a class="paper-ripple" data-g-event="cta" data-g-label="tile-web-designer" id="web-designer"><span
+                    <a class="paper-ripple" data-g-event="cta" data-g-label="tile-web-designer" id="web-designer" href="#!/research"><span
                             class="bg">&nbsp;</span>
                         <span class="title">Research</span></a>
                 </div>
@@ -372,11 +364,11 @@
         }
 
         context.clip();
-        context.drawImage(image,
-                imageWidth * d.i, imageHeight * d.j,
-                imageWidth, imageHeight,
-                -imageWidth / 2, -imageHeight / 2,
-                imageWidth, imageHeight);
+//        context.drawImage(image,
+//                imageWidth * d.i, imageHeight * d.j,
+//                imageWidth, imageHeight,
+//                -imageWidth / 2, -imageHeight / 2,
+//                imageWidth, imageHeight);
         context.restore();
     }
 
@@ -412,16 +404,20 @@
         anchor.exit().remove();
 
         anchor.enter().append("a")
-//                .append("text")
-//                .text(function(d){ return d.example.title.substring(0,1); })
                 .attr("xlink:href", function (d) {
                     return d.example.url;
                 })
-                .attr("tooltip", function (d) {
+                .attr("xlink:title", function (d) {
                     return d.example.title;
                 })
                 .append("path")
                 .attr("d", hexbin.hexagon());
+
+
+        anchor.append("text").text(function (d) {
+            return d.example.title.substr(0, 5) + "...";
+        }).attr("x", function(d) { return d.i - 30; }).attr("font-size", "20px")
+                .attr("y", function(d) {return d.j; });
 
         anchor.attr("transform", function (d) {
             return "translate(" + d + ")";

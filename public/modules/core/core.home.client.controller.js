@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$http', function ($scope, Authentication, $http) {
-    $scope.authentication = Authentication;
+angular.module('core').controller('HomeController', ['$scope', '$http', function ($scope, $http) {
+    //$scope.authentication = Authentication;
 
 
 

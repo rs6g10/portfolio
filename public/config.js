@@ -3,7 +3,7 @@
 // Init the application configuration module for AngularJS application
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
-	var applicationModuleName = 'analytics-variables-viz';
+	var applicationModuleName = 'rahulsharma-portfolio';
 	var applicationModuleVendorDependencies = ['ngResource', 'ngCookies', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ngMaterial', 'ui.router', 'ui.bootstrap', 'ui.utils', 'ui.grid', 'sf.virtualScroll'];
     var directives = ['slickGrid.directive'];
 
